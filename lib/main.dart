@@ -12,14 +12,11 @@ class MyApp extends StatelessWidget {
           title: Text("Student project"),
           centerTitle: true,
         ),
-        body: Center(
-          child: Text(
-            "Test Student",
-            style: TextStyle(
-                fontSize: 20,
-                color: Colors.green,
-                fontFamily: 'RubikWetPaint'),
-          ),
+        body: Container(
+          color: Colors.deepPurpleAccent,
+          child: Text("Student"),
+          margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
+          padding: EdgeInsets.all(2.0),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
