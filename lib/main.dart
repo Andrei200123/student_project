@@ -1,37 +1,75 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MaterialApp(
+      home: UserPanel(),
+    ));
 
-class MyApp extends StatelessWidget {
+class UserPanel extends StatefulWidget {
+  const UserPanel({Key? key}) : super(key: key);
+
+  @override
+  State<UserPanel> createState() => _UserPanelState();
+}
+
+class _UserPanelState extends State<UserPanel> {
+  double _count = 10;
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(primaryColor: Colors.amberAccent),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Student project"),
-          centerTitle: true,
-        ),
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+    return Scaffold(
+      backgroundColor: Colors.white54,
+      appBar: AppBar(
+        title: Text('My Country'),
+        centerTitle: true,
+        backgroundColor: Colors.amber,
+      ),
+      body: SafeArea(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [Text("1"), Text("2"), Text("3")],
-            ),
-            Column(
-              children: [Text("3"), Text("4")],
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(top: 50),
+                ),
+                Text(
+                  "VILED",
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.black,
+                  ),
+                ),
+                CircleAvatar(
+                  backgroundImage: AssetImage('images/VILED.jpg'),
+                  radius: _count,
+                ),
+                Padding(padding: EdgeInsets.only(top: 10)),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.mail,
+                      size: 30,
+                    ),
+                    Padding(padding: EdgeInsets.only(left: 5)),
+                    Text("Vilegodsk-narod@mail.ru")
+                  ],
+                ),
+                Padding(padding: EdgeInsets.only(top: 10)),
+                Text('Size: $_count'),
+              ],
             ),
           ],
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            print("");
-          },
-          child: Text("Тык"),
-        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        backgroundColor: Colors.amber,
+        onPressed: () {
+          setState(() {
+            _count++;
+          });
+        },
       ),
     );
   }
