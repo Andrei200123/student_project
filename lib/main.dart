@@ -13,13 +13,18 @@ class MyApp extends StatelessWidget {
           title: Text("Student project"),
           centerTitle: true,
         ),
-        body: Container(
-          child: Container(
-            color: Colors.deepPurple,
-            child: Text('Country'),
-            margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-            padding: EdgeInsets.all(5),
-          ),
+        body: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [Text("1"), Text("2"), Text("3")],
+            ),
+            Column(
+              children: [Text("3"), Text("4")],
+            ),
+          ],
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
