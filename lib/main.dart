@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -13,10 +14,12 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
         ),
         body: Container(
-          color: Colors.deepPurpleAccent,
-          child: Text("Student"),
-          margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
-          padding: EdgeInsets.all(2.0),
+          child: Container(
+            color: Colors.deepPurple,
+            child: Text('Country'),
+            margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            padding: EdgeInsets.all(5),
+          ),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
